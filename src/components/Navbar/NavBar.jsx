@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -19,11 +20,21 @@ const NavBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#">Inicio</Nav.Link>
-              <Nav.Link href="#">Mujeres</Nav.Link>
-              <Nav.Link href="#">Hombres/Niños</Nav.Link>
-              <Nav.Link href="#">Sobre Nosotros</Nav.Link>
-              <Nav.Link href="#">Contacto</Nav.Link>
+              <NavLink className="link-color" to="/">
+                Inicio
+              </NavLink>
+              <NavLink className="link-color" to="/category/mujeres">
+                Mujeres
+              </NavLink>
+              <NavLink className="link-color" to="/category/hombres">
+                Hombres
+              </NavLink>
+              <NavLink className="link-color" to="/category/niños">
+                Niños
+              </NavLink>
+              <NavLink className="link-color" to="#">
+                Contacto
+              </NavLink>
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -32,7 +43,9 @@ const NavBar = () => {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button className="boton-search" variant="outline-success">
+                Search
+              </Button>
             </Form>
           </Navbar.Collapse>
           <CartWidgets />
